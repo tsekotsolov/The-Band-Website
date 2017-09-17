@@ -1,0 +1,275 @@
+@import'../bootstrap/scss/bootstrap';
+@font-face {
+    font-family: "Crucifixion";
+    src: url(../fonts/Crucifixion-Regular.ttf);
+}
+
+$primary-color:#e23400;
+$text-color:#fff;
+$background-color:#25292E;
+//some custom button styles
+.btn-custom {
+    background: $primary-color;
+    border-radius: 0;
+    cursor: pointer;
+    &:hover {
+        background: $text-color;
+        color: $primary-color
+    }
+}
+
+.hvr-grow {
+    display: inline-block;
+    vertical-align: middle;
+    transform: translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    backface-visibility: hidden;
+    -moz-osx-font-smoothing: grayscale;
+    transition-duration: 0.3s;
+    transition-property: transform;
+}
+
+.hvr-grow:hover,
+.hvr-grow:focus,
+.hvr-grow:active {
+    transform: scale(1.09);
+}
+
+//custom button styles ends here 
+.navbar,
+.navbar-expand-sm {
+    background-color: $background-color !important;
+    padding: 18px;
+}
+
+.navbar-dark .navbar-toggler {
+    color: rgba(255, 255, 255, .5);
+    border-color: $primary-color;
+    outline: none;
+}
+
+.nav-item {
+    text-transform: uppercase;
+    font-weight: 400;
+    .nav-link {
+        color: $text-color !important;
+        &:hover {
+            color: $primary-color !important;
+            text-decoration: underline;
+        }
+    }
+}
+
+.navbar-brand {
+    font-family: 'Crucifixion';
+    color: $primary-color !important;
+    font-style: italic;
+    letter-spacing: 5px;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+body {
+    background-color: $background-color;
+    color: $text-color
+}
+
+h2 {
+    font-family: 'Crucifixion';
+    font-style: italic;
+    letter-spacing: 10px;
+    font-weight: bold;
+    font-size: 3rem;
+    margin: 55px auto;
+}
+
+.flex-align {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero {
+    margin-top: 61px;
+    background-image: url(../img/hero-bg.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 600px;
+    h1 {
+        font-family: 'Crucifixion';
+        color: $primary-color;
+        font-style: italic;
+    }
+}
+
+.about-image {
+    background-image: url(../img/about-bg.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 400px;
+}
+
+.wrapper-about-p {
+    padding: 20px;
+}
+
+.card h5 {
+    color: $primary-color;
+    text-transform: uppercase;
+}
+
+.card {
+    margin: 15px;
+    overflow: hidden;
+    .card-img-overlay {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: flex-start;
+        h4 {
+            align-self: center;
+        }
+        p:first-of-type::before {
+            content: '\f124 ';
+            font-family: FontAwesome;
+        }
+        p:nth-of-type(2)::before {
+            content: '\f133 ';
+            font-family: FontAwesome;
+        }
+        p:nth-of-type(3)::before {
+            content: '\f145 ';
+            font-family: FontAwesome;
+        }
+    }
+    .btn-card {
+        align-self: center;
+    }
+}
+
+.parallax {
+    background-image: url('../img/parallax.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 35vmax;
+    z-index: -5;
+}
+
+.music {
+    background: #333;
+    padding: 25px;
+    margin-top: 10px;
+    box-shadow: 7px 7px 15px rgba(0, 0, 0, .5);
+}
+
+footer {
+    background-color: #333;
+    margin-top: 35px;
+    .row {
+        height: 80px;
+        align-items: center;
+        justify-content: space-between;
+        p,
+        ul {
+            a {
+                display: inline-block;
+                width: 24px;
+                height: 24px;
+                margin: 10px;
+                vertical-align: middle;
+                -o-transition: all .3s;
+                -moz-transition: all .3s;
+                -webkit-transition: all .3s;
+                -ms-transition: all .3s;
+            }
+            .facebook {
+                background: url(../img/facebook.png) left top no-repeat;
+            }
+            .twitter {
+                background: url(../img/twitter.png) left top no-repeat;
+            }
+            .google {
+                background: url(../img/googleplus.png) left top no-repeat;
+            }
+            .youtube {
+                background: url(../img/youtube.png) left top no-repeat;
+            }
+            a:hover,
+            a:active {
+                background-position: left -34px;
+            }
+        }
+    }
+}
+
+@include media-breakpoint-up(lg) {
+    .about {
+        position: relative;
+    }
+    .absolute {
+        position: absolute;
+        top: 309px;
+        left: calc(50% - 570px);
+        z-index: 1;
+    }
+    .our-music {
+        z-index: 5;
+        margin-top: -150px;
+    }
+}
+
+@include media-breakpoint-down(lg) {
+    .about {
+        position: relative;
+    }
+    .absolute {
+        position: absolute;
+        top: 360px;
+        left: calc(50% - 480px);
+        z-index: 1;
+    }
+    .card {
+        margin: 1px;
+    }
+    footer .row {
+        justify-content: center;
+        flex-direction: column;
+        p,
+        ul {
+            margin: 0;
+        }
+    }
+}
+
+@include media-breakpoint-down(md) {
+    .about {
+        position: static;
+    }
+    .absolute {
+        position: static;
+        z-index: 1;
+    }
+    .parallax {
+        display: none;
+    }
+}
+
+@include media-breakpoint-down(sm) {
+    .card-img-overlay {
+        padding: 7px;
+        h4 {
+            font-weight: bold;
+        }
+        * {
+            font-size: 15px;
+        }
+    }
+    .card.text-white {
+        margin: 2px;
+    }
+}
+
